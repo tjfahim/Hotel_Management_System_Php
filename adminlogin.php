@@ -57,15 +57,22 @@ if(isset($_POST['login'])){
                 <div class="col-md-6 jumbotron">
                     <img src="img/adminlogin.jpg" style="width: 488px;height:138px" alt="">
                     <form action="" method="post" class="py-2">
-                        <div class="alert alert-danger">
+                        <div class="">
                             <?php
                             if(isset($error['admin'])){
+                                $sh=$error['admin'];
+                                $show="<h4 class='alert alert-danger'>$sh[0]</h4>";
+                                // print_r($show[0]);
+                                // var_dump($show);
+                                echo $show;
+                                
+                            }else if(isset($error['admin'])){
                                 $show=$error['admin'];
-                                // echo $show;
-                            }else{
-                                $show='';
-                            }
-                            print_r($show);
+                                // var_dump($show);
+                                echo $show;
+                            } 
+                           
+                        
                             ?>
                         </div>
                         <div class="form-group">
