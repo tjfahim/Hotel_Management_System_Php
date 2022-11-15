@@ -103,66 +103,63 @@
                                 </form>
                                  <br>
                                 <br>
-                                <form method="post">
-                                    <?php
-                                    if(isset($_POST['changepassword'])){
-                                        $old=$_POST['oldpassword'];
-                                        $new=$_POST['newpassword'];
-                                        $con=$_POST['conpassword'];
+                                <form action="" method="post">
+                                    <?php 
+                                    if(isset($_POST['update_pass'])){
+                                        $old_pass = $_POST['old_password'];
+                                        $new_pass = $_POST['new_password'];
+                                        $cnf_pass = $_POST['cnf_password'];
+
                                         $error=array();
-                                       
-                                        $qy="SELECT * FROM admin WHERE username='$ad'";
-                                        $old_pass = mysqli_query($con,$qy);
-                                        var_dump($old_pass);
-                                        $row=mysqli_fetch_array($old_pass);
-                                        echo $row['username'];
-                                        $pass=$row['password'];
-                                        if (empty($old)) {  
-                                            $error['p'] = "Error! You didn't enter Old Password.";  
-                                        } else if(empty($new)) {  
-                                            $error['p'] = "Error! You didn't enter New Password.";  
-                                        } else if(empty($con)) {  
-                                            $error['p'] = "Error! You didn't enter Confirm Password.";  
-                                        } 
-                                        else if($old != $old_pass){
-                                            $error['p'] = "Error! You Old Password does not match";  
-                                        } 
-                                        else if($new != $con){
-                                            $error['p'] = "Error! Confirm Password does not match";  
+                                        $old=mysqli_query($con,"SELECT * FROM admin WHERE username='$ad'");
+                                        $row=mysqli_fetch_array($old);
+                                        $pass=$row['password'];                                        
+
+                                        if(empty($old_pass)){
+                                            $error['p']="Enter old password";
+                                        }else if(empty($new_pass)){
+                                            $error['p']='Enter new password';
+                                        }else if(empty($cnf_pass)){
+                                            $error['p']='Enter confirm password';
+                                        }else if($old_pass!=$pass){
+                                            $error['p']='Old password does not match';
+                                        }else if($new_pass!=$cnf_pass){
+                                            $error['p']='Confirm password is incorrect';
                                         }
 
                                         if(count($error)==0){
-                                            $query="UPDATE admin SET password='$new' WHERE username='$ad'";
+                                            $query="UPDATE admin SET password='$new_pass' WHERE username='$ad'";
                                             mysqli_query($con,$query);
-                                        }
-                                        if(isset($error['p'])){
-                                            $e=$error['p'];
-                                            $show="<h5 class='text-center alert alert-danger'>$e</h5>";
-                                        }else{
-                                            $show="";
+                                            $succ="<h4 class='alert alert-success'>Password change successfully</h4>";
+                                            echo $succ;
                                         }
                                     }
                                     ?>
                                     <h3>Change Password</h3>
-                                    <?php
-                                    echo $show;
-                                    ?>
-                               <br>
-                                <div class="form-group">
-                                    <label for="oldpassword">Old Password</label>
-                                    <input type="password" name="oldpassword" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="newpassword">New Password</label>
-                                    <input type="password" name="newpassword" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="conpassword">Confirm Password</label>
-                                    <input type="password" name="conpassword" class="form-control">
-                                </div>
-                                <input type="submit" name="changepassword" value="Update Password" class="btn btn-success">
 
+                                    <?php 
+                                    if(isset($error['p'])){
+                                        $sh=$error['p'];
+                                        $show="<h4 class='alert alert-danger'>$sh</h4>";
+                                        echo $show;
+
+                                    }
+                                    ?>
+                                    <div class="form-group">
+                                        <label for="">Old Password</label>
+                                        <input type="password" name="old_password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">New Password</label>
+                                        <input type="password" name="new_password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Confirm Password</label>
+                                        <input type="password" name="cnf_password" class="form-control">
+                                    </div>
+                                    <input type="submit" name="update_pass" value="Update Password" class="btn btn-info">
                                 </form>
+                        
                             </div>
                         </div>
                     </div>
