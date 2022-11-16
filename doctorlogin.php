@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
             echo"<script>alert('You are login as Doctor')</script>";
             session_start();
             $_SESSION['doctor']=$username;
-            header("location:index.php");
+            header("location:doctor/index.php");
             exit();
 
         }else{
