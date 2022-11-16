@@ -54,12 +54,17 @@
                             <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> 0 </h5>
+                                            <?php 
+                                                $doctor="SELECT * FROM doctors WHERE status='Approved'";
+                                                $re=mysqli_query($con,$doctor);
+                                                $row=mysqli_num_rows($re);
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $row ?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Doctors</h5>
                                         </div>
                                         <div class="col-md-4">
-                                        <i class="fas fa-user-md fa-3x my-4" style="color:white;"></i>
+                                            <a href="doctor.php"><i class="fas fa-user-md fa-3x my-4" style="color:white;"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -96,12 +101,18 @@
                             <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> 0 </h5>
+                                            <?php 
+                                            $job = mysqli_query($con,"SELECT * FROM doctors WHERE status='Pending'");
+                                            $re = mysqli_num_rows($job);
+
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $re ?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Job Request</h5>
                                         </div>
                                         <div class="col-md-4">
-                                        <i class="fa fa-book-open fa-3x my-4" style="color:white;"></i>
+                                            <a href="job_req.php"><i class="fa fa-book-open fa-3x my-4" style="color:white;"></i></a>
+                                        
                                         </div>
                                     </div>
                                 </div>
