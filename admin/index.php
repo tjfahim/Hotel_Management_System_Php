@@ -73,12 +73,20 @@
                             <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> 0 </h5>
+                                        <?php 
+                                                $patient="SELECT * FROM patient";
+                                                $re=mysqli_query($con,$patient);
+                                                $row=mysqli_num_rows($re);
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $row?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Patient</h5>
                                         </div>
                                         <div class="col-md-4">
-                                        <i class="fas fa-procedures fa-3x my-4" style="color:white;"></i>
+                                            <a href="patient.php">
+                                            <i class="fas fa-procedures fa-3x my-4" style="color:white;"></i>
+
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -87,12 +95,20 @@
                             <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> 0 </h5>
+                                        <?php 
+                                                $report="SELECT * FROM report";
+                                                $re=mysqli_query($con,$report);
+                                                $row=mysqli_num_rows($re);
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $row ?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Report</h5>
                                         </div>
                                         <div class="col-md-4">
-                                        <i class="fa fa-flag fa-3x my-4" style="color:white;"></i>
+                                            <a href="report.php">
+                                            <i class="fa fa-flag fa-3x my-4" style="color:white;"></i>
+
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -117,20 +133,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 bg-secondary m-2" style="height: 130px;">
-                            <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> 0 </h5>
-                                            <h5 class="text-white">Total</h5>
-                                            <h5 class="text-white">Report</h5>
-                                        </div>
-                                        <div class="col-md-4">
-                                        <i class="fa fa-money-check-alt fa-3x my-4" style="color:white;"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
