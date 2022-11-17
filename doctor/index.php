@@ -72,15 +72,18 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <?php 
-                                                // $ad = mysqli_query($con,"SELECT * FROM admin");
-                                                // $num = mysqli_num_rows($ad);
+                                                $ad = mysqli_query($con,"SELECT * FROM appointment WHERE status='Pending'");
+                                                $num = mysqli_num_rows($ad);
                                             ?>
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo '0'; ?> </h5>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $num; ?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Appointment</h5>
                                         </div>
                                         <div class="col-md-4">
-                                        <i class="fas fa-calendar-check fa-3x my-4" style="color:white;"></i>
+                                            <a href="appointment.php">
+                                            <i class="fas fa-calendar-check fa-3x my-4" style="color:white;"></i>
+
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -15,6 +15,7 @@
                         <a href="Patient.php" class="list-group-item list-group-item-action bg-info text-center">Patient</a>
                         <a href="report.php" class="list-group-item list-group-item-action bg-info text-center">Report</a>
                         <a href="job_req.php" class="list-group-item list-group-item-action bg-info text-center">Job Request</a>
+                        <a href="income.php" class="list-group-item list-group-item-action bg-info text-center">Total Income</a>
                     </div>
 </body>
 </html>

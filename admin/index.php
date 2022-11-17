@@ -133,7 +133,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-3 bg-secondary m-2" style="height: 130px;">
+                            <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                        <?php 
+                                                $income="SELECT sum(amount_paid) as profit FROM income";
+                                                $re=mysqli_query($con,$income);
+                                                $row=mysqli_fetch_array($re);
+                                                $inc=$row['profit']
+                                            ?>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php $inc ?> </h5>
+                                            <h5 class="text-white">Total</h5>
+                                            <h5 class="text-white">Income</h5>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="income.php">
+                                            <i class="fa fa-money-check-alt fa-3x my-4" style="color:white;"></i>
 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
