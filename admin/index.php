@@ -141,9 +141,9 @@
                                                 $income="SELECT sum(amount_paid) as profit FROM income";
                                                 $re=mysqli_query($con,$income);
                                                 $row=mysqli_fetch_array($re);
-                                                $inc=$row['profit']
+                                                $inc=$row['profit'];
                                             ?>
-                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php $inc ?> </h5>
+                                            <h5 class="my-2 text-white" style="font-size:30px;"> <?php echo $inc ?> </h5>
                                             <h5 class="text-white">Total</h5>
                                             <h5 class="text-white">Income</h5>
                                         </div>

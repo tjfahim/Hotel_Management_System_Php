@@ -25,17 +25,17 @@
           
             if(isset($_SESSION['admin'])){
                 $user=$_SESSION['admin'];
-                echo'<li class="nav-item"><a href="adminlogin.php" class="nav-link text-white">'.$user.'</a></li>
+                echo'<li class="nav-item"><a href="profile.php" class="nav-link text-white">'.$user.'</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>';
 
             }else if(isset($_SESSION['doctor'])){
                 $user=$_SESSION['doctor'];
-                echo'<li class="nav-item"><a href="adminlogin.php" class="nav-link text-white">'.$user.'</a></li>
+                echo'<li class="nav-item"><a href="profile.php" class="nav-link text-white">'.$user.'</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>';
             
             }else if(isset($_SESSION['patient'])){
                 $user=$_SESSION['patient'];
-                echo'<li class="nav-item"><a href="adminlogin.php" class="nav-link text-white">'.$user.'</a></li>
+                echo'<li class="nav-item"><a href="profile.php" class="nav-link text-white">'.$user.'</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>';
             }
             else{

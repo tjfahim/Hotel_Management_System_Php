@@ -45,7 +45,6 @@
                 </div>
                 <div class="col-md-10">
                     <h4 class="my-2">Patient Dashboard</h4>
-
                     <div class="col-md-12 my-1">
                         <div class="row">
                             <div class="col-md-3 bg-success m-2" style="height: 140px;">
@@ -83,7 +82,7 @@
                                             <h5 class="text-white mt-3" >My Invoice</h5>
                                         </div>
                                         <div class="col-md-4">
-                                            <a href="#">
+                                            <a href="invoice.php">
                                             <i class="fas fa-file-invoice-dollar fa-3x my-4" style="color:white;"></i>
                                             </a>
                                         </div>

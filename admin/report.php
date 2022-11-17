@@ -50,7 +50,7 @@
                         if(mysqli_num_rows($res)<1){
                             $output .="
                             <tr>
-                                <td colspan='10' class='text-center'>No Report Available.</td>
+                                <td colspan='5' class='text-center'>No Report Available.</td>
                             </tr>
                             "
                             ;
